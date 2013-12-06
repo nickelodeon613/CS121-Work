@@ -1,0 +1,14 @@
+```{r}
+primeSieve <- function(n){
+guess <- rep(TRUE,100)
+for (k in 2:100){
+  guess[(1:100)%%k == 0& (1:100)>k] <- FALSE
+  }
+return(which(guess))
+}
+```
+
+```{r}
+primeSieve(100)
+```
+

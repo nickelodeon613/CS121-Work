@@ -1,0 +1,203 @@
+Looping practice in class 
+=======================================
+
+REPEAT
+----------  
+```{r}
+mySum <- function(v){
+  #set up state 
+  sofar <- 0
+  k <- 1
+  repeat{
+    #update status
+    sofar <- sofar + v[k]
+    k <- k+1
+    
+    #terminate? Am I done?
+    if (k == (length(v)+1))break 
+    }
+  return(sofar)
+  }
+```
+
+Tests statements:
+```{r}
+mySum(1:10)
+sum(1:10)
+```
+
+WHILE
+------------
+```{r}
+mySumWhile <- function(v){
+  #set up state
+  sofar <- 0
+  k <- 1
+  #loop
+  while(k != (length(v)+1)) {
+    #update state 
+    sofar <- sofar +v[k]
+    k <- k+1
+    }
+  
+  #what to do with the results 
+  return(sofar)
+  }
+```
+
+Tests Statements:
+```{r}
+mySumWhile(1:10)
+```
+
+FOR
+------------
+```{r}
+mySumFor <- function(v){
+  sofar <- 0
+  for(k in 1:(length(v))){
+    sofar <- sofar +v[k]
+    }
+  return(sofar)
+  }
+```
+tests statements:
+```{r}
+mySumFor(1:10)
+```
+
+RUNNING?
+------------
+```{r}
+myRunningSum <- function(v){
+  #set up state
+  sofar <- 0
+  res <- c()
+    for (k in 1:length(v)){
+      #update state 
+      sofar <- sofar + v[k]
+  res <- c(res, sofar)
+  }
+  return(res)
+  }
+```
+
+test statements:
+```{r}
+myRunningSum(1:10)
+```
+
+RUNNING BACKWARDS:
+```{r}
+myRunningBackSum <- function(v){
+  sofar <- 0
+  res <- c()
+  for (k in 1:length(v)){
+    sofar <- sofar + v[k]
+    res <- c(sofar, res)
+    }
+  return(res)
+  }
+```
+
+tests statements:
+```{r}
+myRunningBackSum(1:10)
+```
+
+UNIQUE ELEMENTS
+-------------------------
+```{r}
+myUnique <- function(v){
+  #set up state 
+  already <- c()
+  for (k in v) {
+    if (!(k %in% already))
+    already <- c(already,k)
+    }
+  return(already)
+  }
+```
+
+testing:
+```{r}
+myUnique(c("dog", "ant", "bee", "cat", "dog"))
+```
+
+```{r}
+myUnique <- function(v){
+  #set up state 
+  already <- c()
+  for (k in v) {
+    if (k %in% already) {#its already in it
+    already <- c(already, "***")
+      } else { #a new one!
+      already <- c(already,k)
+    }
+    }
+  return(already)
+  }
+```
+
+testing:
+```{r}
+myUnique(c("dog", "ant","bee", "cat","dog"))
+```
+
+FOR OCTOBER 10
+========================
+##Base Conversion
+given a character vector of digits and a numerical base
+```{r}
+baseToNumeric <- function(Nvec,b){
+  howMany <- length(Nvec)
+  herdsize <- b^((howMany-1):0)
+  return(sum(as.numeric(Nvec)*herdsize))
+  }
+```
+
+Test statements:
+```{r}
+baseToNumeric(c("7","6","5","4"), 8)
+baseToNumeric(c("7","6","5","4"), 12)
+```
+
+### As a loop
+
+```{r}
+convertAsALoop <- function(Nvec, b){
+  #initialize state 
+  Nvec <- as.numeric(Nvec)
+  sheepCount <- 0
+  boxSize <- 1
+  
+  for(k in 1:length(Nvec)){
+    sheepCount <- sheepCount + boxSize*Nvec[k]
+    boxSize <- boxSize*b
+    }
+  return(sheepCount)
+  }
+```
+
+Tests:
+```{r}
+convertAsALoop(c("7","6","5","4"), 8)
+convertAsALoop(c("7","6","5","4"), 12)
+```
+
+Blastoff?
+```{r}
+blastoffWhile <- function(time){ #time is pos integer in seconds 
+  while(time != 0) {
+    Sys.sleep(1)
+    cat(time, "\n")
+    time <- time -1
+    }
+  Sys.sleep(1)
+  cat("BLASTOFF!!!")
+  }
+````
+
+```{r}
+blastoffWhile(5)
+```

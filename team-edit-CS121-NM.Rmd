@@ -1,0 +1,10 @@
+# collaborative editing in R
+
+This is my document how cool is this woot woot 
+
+TO knit in R we have to record code then do it in r 
+
+```{r}
+3+2
+```
+

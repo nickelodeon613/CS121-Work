@@ -1,0 +1,48 @@
+# October 1st 
+
+Reverser 
+====================
+
+## For numbers 
+```{r}
+x <- function(x,y) c(y:x)
+
+rev(1:5)
+
+rev(1:13)
+```
+
+##For words
+```{r}
+reverse <- function(word){
+  new <- strsplit(word, split="")[[1]]
+  new <- new[rev(1:nchar(word))]
+  paste(new, collapse = "")
+}
+
+```
+Test Statements
+---------------------
+```{r}
+ reverse("disney")
+```
+
+Scrambler
+====================
+```{r}
+scrambler <- function(word){
+  new <- strsplit(word, split="")[[1]]
+  new <- new[sample(1:nchar(word))]
+  paste(new, collapse = "")
+  }
+```
+
+Test Statements
+------------------
+```{r}
+scrambler("quique")
+```
+
+VowelBleeper
+===================
+```{r}

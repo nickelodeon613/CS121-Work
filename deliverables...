@@ -1,0 +1,14 @@
+```{r}
+# Enter your GitHub ID here
+gitID <- "nickelodeon613"
+```
+
+```{r results='asis',echo=FALSE}
+deliverables <- "http://dtkaplan.github.io/ScientificComputing/Assignments/deliverable-listing.md"
+text <- readLines( url( deliverables ) )
+# text <- readLines('deliverable-listing.md')
+text <- gsub('#gsite#',gitID,text)
+cat(paste(text,collapse="\n"))
+```
+
+<a href='http://www.bitpixels.com/'>Website thumbnails provided by BitPixels</a>

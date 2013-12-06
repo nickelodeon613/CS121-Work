@@ -1,0 +1,12 @@
+nameBlank Canvases, "Circles and Squares"
+========================================================
+
+```{r}
+redsquare <- plot(type="n", xlim=c(0,100), ylim=c(0,100), xaxt="n", yaxt="n", asp=1)
+   x <- c(0:4, 4)
+   y <- c(0:4)
+   polygon(x, y=NULL, col = c("red"), border=c("black"), lwd=1)
+   
+return(redsquare)
+
+```
