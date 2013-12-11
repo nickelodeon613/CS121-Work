@@ -1,4 +1,4 @@
-Blank "Canvases", CirTcles and Squares
+Blank "Canvases", Circles and Squares
 ===================================================
 
 ```{r}
