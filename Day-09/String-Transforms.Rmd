@@ -1,0 +1,65 @@
+String Transformer Functions 
+========================================================
+
+Reverser
+-----------------
+## For numbers 
+```{r}
+x <- function(x,y) c(y:x)
+
+rev(1:5)
+
+rev(1:13)
+```
+
+##For words
+```{r}
+reverse <- function(word){
+  new <- strsplit(word, split="")[[1]]
+  new <- new[rev(1:nchar(word))]
+  paste(new, collapse = "")
+}
+
+```
+Test Statements
+---------------------
+```{r}
+ reverse("disney")
+```
+
+Scrambler
+====================
+```{r}
+scrambler <- function(word){
+  new <- strsplit(word, split="")[[1]]
+  new <- new[sample(1:nchar(word))]
+  paste(new, collapse = "")
+  }
+```
+
+Test Statements
+------------------
+```{r}
+scrambler("quique")
+```
+
+VowelBleeper
+===================
+```{r}
+vbleep <- function(x){
+  wordbleep <- chartr("aeiou", "*****", x)
+  return(wordbleep)
+}
+vbleep("quique")
+```
+
+L33T
+-------------
+```{r}
+LetToNum <- function(x){
+  numlet <- chartr("abcdef","123456",x)
+  return(numlet)
+  }
+
+LetToNum("adf")
+````
