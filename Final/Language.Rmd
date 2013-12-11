@@ -1,0 +1,31 @@
+FINAL AHHHHHHHH
+========================================================
+
+```{r}
+require(mosaic)
+fetchData("COMP121/word-hints.R")
+
+Spanish
+
+letterProportion <- function(words){
+  maybe <- unlist(Spanish)
+  letters <- names(Spanish)
+  props <- names(maybe)
+  newlet <- strsplit(letters, split=TRUE)
+  newprops <- strsplit(props,split=TRUE)
+  
+  possibly <- strsplit(props, split=TRUE, fixed=FALSE)
+  return(possibly)
+  }
+```
+```{r}
+#lies ok so this is how i would theoretically do this 
+
+letterProportion <- function(x){
+  maybe <- tolower(table(unlist(strsplit(x, split=TRUE))))
+  amountlet <- nchar(x)
+  lp <- amountlet/x
+
+```
+
+##SO I couldn't get this to this to work... I realized (what I have written above) was me tryig to do the whole thing instead of number one because I accidently read it wrong. However, theoretically for number one if I could get it to work I would just get the number of characters in the string and divide it by the length of the character string through nchar. 
