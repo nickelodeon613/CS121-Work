@@ -277,6 +277,23 @@ thetaFromLengthsTest(3, 4, pi/2)
 <pre><code>## [1] 0
 </code></pre>
 
+<h2>Graphics</h2>
+
+<pre><code class="r">canvas &lt;- function(x, y) {
+    plot(x, y, xaxt = &quot;n&quot;, yaxt = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, asp = 1, type = &quot;n&quot;, 
+        axes = FALSE)
+}
+canvas(2, 3)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEgAACxIB0t1+/AAAAQ1JREFUeJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgb+JlAAEhE9MRAAAAAElFTkSuQmCC" alt="plot of chunk unnamed-chunk-7"/> </p>
+
+<pre><code class="r">drawCircle &lt;- function(x, y, r) {
+    grid.circle(x, y, r, default.units = &quot;npc&quot;, name = NULL, gp = gpar(), draw = TRUE, 
+        vp = NULL)
+}
+</code></pre>
+
 </body>
 
 </html>
